@@ -1,0 +1,169 @@
+﻿<Window x:Class="Personlig_Profil.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Personlig_Profil"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <!-- Her skal der difineres rækker og kolonner-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Titelrække-->
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <!-- Venstre del-->
+            <ColumnDefinition Width="2*"/>
+            <!-- Midter del-->
+            <ColumnDefinition Width="4*"/>
+            <!-- Højre del-->
+
+        </Grid.ColumnDefinitions>
+        <!-- Titel -->
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="3" Text="Velkommen til Bjarkes personlige profil" 
+                   HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" 
+                   Margin="10" />
+
+        <!-- Venstre sektion -->
+        <Grid Grid.Row="1" Grid.Column="0" Margin="5,0,5,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="LidtOmMig" Click="LidtOmMig_Click" Margin="5,0,5,5">
+                <Grid>
+                    <!-- Billede -->
+                    <Image
+                x:Name="ProfilBillede"
+                Height="266"
+                Width="188"
+                RenderTransformOrigin="0.464,0.497"/>
+
+                    <!-- Tekst -->
+                    <TextBlock
+                Text="Klik på mig!"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                FontWeight="Bold"
+                Foreground="White"
+                Background="Black"
+                Opacity="0.7"
+                Padding="5"
+                TextAlignment="Center" Margin="0,-27,0,0"/>
+                </Grid>
+            </Button>
+        </Grid>
+
+        <!-- Midtersektion -->
+        <Grid Grid.Row="1" Grid.Column="1" Margin="5" ShowGridLines="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+
+                <RowDefinition Height="2*"/>
+
+            </Grid.RowDefinitions>
+
+
+            <Button
+                x:Name="Krapyl"
+                Click="Krapyl_Click" Margin="0,-5,0,5">
+                <Image
+                        x:Name="KrapylLogoJpg"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Height="157"
+                        Width="182" RenderTransformOrigin="0.529,0.287"/>
+            </Button>
+
+
+            <ScrollViewer
+                Grid.Column="1"
+                Grid.Row="1"
+                Grid.RowSpan="3"
+                HorizontalScrollBarVisibility="Auto"
+                VerticalScrollBarVisibility="Auto">
+                <StackPanel
+                x:Name="PanelForFritid"
+        
+                Orientation="Vertical">
+                    <Label
+                    Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+                    <Label
+                     Content="Min Fritid, indsæt tekstbox"/>
+
+
+
+
+
+
+                </StackPanel>
+
+
+            </ScrollViewer>
+
+
+        </Grid>
+
+
+
+        <!-- Højre sektion -->
+
+        <Grid Grid.Row="1" Grid.Column="2" Margin="5" ShowGridLines="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+
+                <!-- Generel ansøgning -->
+
+                <RowDefinition Height="2*"/>
+
+                <!-- CV -->
+
+                <RowDefinition Height="1*"/>
+
+                <!-- Diverse links -->
+
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Generel ansøgning, link til video???" FontWeight="Bold" Margin="5"/>
+            <TextBlock Grid.Row="1" Text="CV - indsæt kort udd/arbejds erfaring" Margin="5"/>
+            <TextBlock Grid.Row="2" Text="Diverse links: Linkedin, Github, Facebook" Margin="5"/>
+        </Grid>
+
+    </Grid>
+</Window>    

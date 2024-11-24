@@ -1,0 +1,30 @@
+﻿<Window x:Class="Personlig_Profil.VideoPlayerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Video Player" Height="500" Width="800">
+    <Grid>
+        <!-- Definerer kolonner -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <!-- Til knapper og volumekontrol -->
+            <ColumnDefinition Width="*" />
+            <!-- Til video og slider -->
+        </Grid.ColumnDefinitions>
+
+        <!-- MediaElement for videoafspilning -->
+        <MediaElement x:Name="VideoPlayer" Width="700" Height="400" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" LoadedBehavior="Manual" UnloadedBehavior="Stop" />
+
+        <!-- Venstre kolonne med knapper og volumen -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10" Grid.Column="0">
+            <Button Content="Play" Width="100" Margin="5" Click="PlayVideo" />
+            <Button Content="Pause" Width="100" Margin="5" Click="PauseVideo" />
+            <Button Content="Stop" Width="100" Margin="5" Click="StopVideo" />
+            <!-- Volume kontrol -->
+            <Label Content="Volume" HorizontalAlignment="Center" Margin="10,20,10,5" />
+            <Slider x:Name="VolumeSlider" Width="100" Minimum="0" Maximum="1" Value="0.5" TickFrequency="0.1" TickPlacement="BottomRight" ValueChanged="VolumeSlider_ValueChanged" />
+        </StackPanel>
+
+        <!-- Slider for at søge i videoen -->
+        <Slider x:Name="SeekSlider" Width="650" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" Grid.Column="1" Maximum="100" ValueChanged="SeekSlider_ValueChanged" />
+    </Grid>
+</Window>

@@ -39,25 +39,77 @@ namespace Personlig_Profil
 
 
 
-        
+
 
 
         private void LidtOmMig_Click(object sender, RoutedEventArgs e) // LidtOmMig knappens funktion
         {
             MessageBox.Show("Hej! Mit navn er Bjarke Pallisgaard Andersen!\nJeg bor i Ådum med min kæreste, Lisa og hendes to børn.\n" +
-                 
-                "\nJeg har lavet denne WPF app for at vise, at jeg kan sætte en lille smule kode sammen, selvom det ikke lige frem er  mit modersmål, endnu ;)\n" +
-                "\nJeg er 32 år gammel, og jeg er på udkig efter en læreplads som Datateknikker med speciale i programmering, eller forkortet: Software-\n");
+
+                "\nJeg er 32 år gammel, og jeg er på udkig efter en læreplads som Datateknikker med speciale i programmering, eller forkortet: Software-udvikler\n" +
+
+                "\nJeg har lavet denne WPF app for at vise, at jeg kan sætte en lille smule kode sammen, denne app vil løbende udvikle sig med mere design og mere infomation omkring mig\n" +
+                "\n"
+                
+                
+                );
 
 
 
         }
 
 
-        private void Krapyl_Click(object sender, RoutedEventArgs e) // LidtOmMig knappens funktion
+        private void Krapyl_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Det her er mit 'Hjertebarn', mit band Krapyl. https://www.youtube.com/results?search_query=krapyl+song+13.  ");
+            // URL til YouTube
+            string url = "https://linktr.ee/Krapyl";
 
+            try
+            {
+                // Åbner linket i standardbrowseren
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true // Kræves for at åbne URL'en
+                });
+            }
+            catch (Exception ex)
+            {
+                // Fejlhåndtering, hvis noget går galt
+                MessageBox.Show($"Kunne ikke åbne linket. Fejl: {ex.Message}", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
+
+
+        private void GitHub_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = "https://github.com/Bmantaz",
+                UseShellExecute = true
+            });
+        }
+        private void Video_Click(object sender, RoutedEventArgs e)
+        {
+            // Tilføj din logik her, for eksempel:
+            MessageBox.Show("Video-knappen blev klikket!");
+        }
+
+
+
+
+        private void ShowMediaPlayer_Click(object sender, RoutedEventArgs e)
+        {
+            // Opret et nyt VideoPlayerWindow og send URI'en til videoen
+            VideoPlayerWindow videoWindow = new VideoPlayerWindow("Assets/GenerelAnsøgning.mp4");
+            videoWindow.Show();  // Dette åbner vinduet
+        }
+
+ 
+
+
+      
     }
+
+
 }
